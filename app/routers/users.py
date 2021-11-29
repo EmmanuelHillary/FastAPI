@@ -17,9 +17,9 @@ def create_user(user:UserCreate, db:Session = Depends(get_db)):
     username = db.query(User).filter(User.username==user.username).first()
     email = db.query(User).filter(User.email==user.email).first()
     if username:
-        raise HTTPExcection(status_code=status.HTTP_409_CONFLICT, detail="user with username:{username.username} already exists")
+        raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="user with username:{username.username} already exists")
     if email:
-        raise HTTPExcection(status_code=status.HTTP_409_CONFLICT, detail="user with email:{email.email} already exists")
+        raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="user with email:{email.email} already exists")
     hashed_password = hash(user.password)
     user.password = hashed_password
     new_user = User(**user.dict())
