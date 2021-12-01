@@ -31,7 +31,7 @@ app.add_middleware(
 
 @app.get("/")
 def index():
-    return {"message": "Welcome to FastAPI"}
+    return {"message": "Welcome to FastAPI - project by OceanHillz"}
 
 
 
