@@ -12,7 +12,7 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     environment:
-      - name: fastapi
+      name: fastapi
     env:
       DATABASE_USERNAME: ${{secret.DATABASE_USERNAME}}
       DATABASE_PASSWORD: ${{secret.DATABASE_PASSWORD}}
