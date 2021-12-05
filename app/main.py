@@ -31,7 +31,7 @@ app.add_middleware(
 
 @app.get("/")
 def index():
-    return {"message": "Welcome to FastAPI - project by OceanHillz deployed from CI/CD pipeline"}
+    return {"message": "Welcome to FastAPI - project by OceanHillz deployed from CI/CD pipeline to ubuntu server"}
 
 
 
