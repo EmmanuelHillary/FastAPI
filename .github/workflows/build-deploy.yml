@@ -69,15 +69,15 @@ jobs:
     needs: [build]
     environment:
       name: ubuntu
-      steps:
-        - name: deploy to ubuntu server
-          uses: appleboy/ssh-action@master
-          with:
-            host: ${{ secrets.HOST }}
-            username: ${{ secrets.USERNAME }}
-            password: ${{ secrets.PASSWORD }}
-            script: |
-              cd app/src/FastAPI
-              git pull
-              echo ${{ secrets.USERNAME }} | sudo -S systemctl restart fastapi
+    steps:
+      - name: deploy to ubuntu server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          script: |
+            cd app/src/FastAPI
+            git pull
+            echo ${{ secrets.USERNAME }} | sudo -S systemctl restart fastapi
 
